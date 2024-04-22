@@ -30,4 +30,25 @@ printOutput($input);
 ?>
 ```
 
-Ini akan mencetak output sesuai dengan permintaan Anda.
+// Input data
+var inputData = "Amanda, amanda@gmail.com; Dian, dian@gmail.com";
+
+// Split the input into individual contacts
+var contacts = inputData.split(";");
+
+// Initialize an array to store contact objects
+var contactList = [];
+
+// Iterate over each contact
+contacts.forEach(function(contact) {
+    // Split each contact into name and email
+    var parts = contact.trim().split(", ");
+    var name = parts[0];
+    var email = parts[1];
+    
+    // Create a contact object and push it to the contact list array
+    contactList.push({name: name, email: email});
+});
+
+// Output the contact list
+console.log(contactList);
