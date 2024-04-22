@@ -31,7 +31,7 @@ printOutput($input);
 ```
 
 // Input data
-var inputData = "Amanda, amanda@gmail.com; Dian, dian@gmail.com";
+var inputData = "Charlie Zoe,charlie.zoe@example.com; Charlie Zoe,charlie.zoe@example.com; Andre Xavier,andre.xavier@example.com; Charlie Xyz,charlie.zoe@example.com; Jean Summers,jean.summers@example.com; Charlie Xya,charlie.zoe@example.com";
 
 // Split the input into individual contacts
 var contacts = inputData.split(";");
