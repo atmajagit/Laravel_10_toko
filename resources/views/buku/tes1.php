@@ -88,3 +88,17 @@ echo "Duplicate emails: ";
 print_r(array_keys($duplicates));
 
 ?>
+
+<?php
+
+// Input
+$input = 0;
+
+// Memeriksa apakah input adalah kelipatan 25
+if ($input % 25 == 0) {
+    echo "Ya, $input adalah angka kelipatan 25";
+} else {
+    echo "Tidak, $input bukan angka kelipatan 25";
+}
+
+?>
