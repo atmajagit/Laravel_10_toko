@@ -52,3 +52,39 @@ contacts.forEach(function(contact) {
 
 // Output the contact list
 console.log(contactList);
+
+
+
+<?php
+
+// Input data
+$inputData = "Charlie Zoe,charlie.zoe@example.com; Charlie Zoe,charlie.zoe@example.com; Andre Xavier,andre.xavier@example.com; Charlie Xyz,charlie.zoe@example.com; Jean Summers,jean.summers@example.com; Charlie Xya,charlie.zoe@example.com";
+
+// Split the input into individual contacts
+$contacts = explode("; ", $inputData);
+
+// Initialize an array to store contact objects
+$contactList = [];
+
+// Iterate over each contact
+foreach ($contacts as $contact) {
+    // Split each contact into name and email
+    $parts = explode(",", $contact);
+    $name = trim($parts[0]);
+    $email = trim($parts[1]);
+    
+    // Create a contact object and push it to the contact list array
+    $contactList[] = ['name' => $name, 'email' => $email];
+}
+
+// Find duplicate emails
+$emailCounts = array_count_values(array_column($contactList, 'email'));
+$duplicates = array_filter($emailCounts, function($count) {
+    return $count > 1;
+});
+
+// Output duplicate emails
+echo "Duplicate emails: ";
+print_r(array_keys($duplicates));
+
+?>
